@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s Estilos de Caixa</title>
+    <style>
+        /* ESTILOS DE FUNDO E ESTRUTURA (Limpos e Lisos) */
+        :root {
+            --bg-color: #12091f;      /* Fundo escuro e liso */
+            --card-bg: #1c102e;       /* Card liso sem adesivos */
+            --border-card: #3c1e63;   /* Borda suave dos cards */
+            --title-color: #ffd166;   /* Dourado para destaques */
+            --text-color: #f1e6ff;
+            --box-bg:#ffffff;        /* Cor verde-lima exata da imagem */
+            --box-text: #112200;
+            --dracula-red: #d64ecb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: var(--title-color);
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #bfa8e0;
+            margin: 0;
+        }
+
+        /* GRELHA DOS 6 CARDS */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-card);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* -------------------------------------------------------------
+           ESTILO BASE EXIGIDO NA FOTO
+           p { background-color: #C2F670; width: 200px; height: 200px; }
+        ------------------------------------------------------------- */
+        .box-base {
+            background-color: var(--box-bg);
+            width: 200px;
+            height: 200px;
+            color: var(--box-text);
+            font-size: 13px;
+            line-height: 1.4;
+            box-sizing: content-box;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 1: Overflow (Transbordo)
+        ------------------------------------------------------------- */
+        .box-1 {
+            overflow: visible;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 2: Espaçoso (Padding de 2em)
+        ------------------------------------------------------------- */
+        .box-2 {
+            padding: 2em;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 3: Borda e Espaçamento (Border + Padding)
+        ------------------------------------------------------------- */
+        .box-3 {
+            border: 4px solid var(--dracula-red);
+            padding: 2em;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 4: Margem, Borda e Espaçamento
+        ------------------------------------------------------------- */
+        .box-4-guide {
+            border: 1px dashed #5a437a; /* Guia para visualizar a margem externa */
+            display: inline-block;
+        }
+        .box-4 {
+            margin: 4px;
+            border: 4px solid var(--dracula-red);
+            padding: 2em;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 5: Borda Tracejada e Margem Larga
+        ------------------------------------------------------------- */
+        .box-5-guide {
+            border: 1px dashed #5a437a;
+            display: inline-block;
+        }
+        .box-5 {
+            border: 4px dashed #000000;
+            padding: 1em;
+            margin: 1em 6em;
+        }
+
+        /* -------------------------------------------------------------
+           EXEMPLO 6: Centralização Automática e Espaçamento
+        ------------------------------------------------------------- */
+        .box-6-guide {
+            border: 1px dashed #5a437a;
+            width: 100%;
+        }
+        .box-6 {
+            border: 2px solid #000000;
+            padding: 1em 50px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>aula sobre box e padding</h1>
+        <p class="subtitle">Exemplos dos Estilos de Caixa</p>
+    </header>
+
+    <div class="container">
+
+        <!-- EXEMPLO 1 -->
+        <div class="card">
+            <h2>Exemplo 1: Transbordo </h2>
+            <div class="box-base box-1">
+            controla como o conteúdo de uma box (caixa) é exibido quando ultrapassa o tamanho definido pelo elemento.
+            </div>
+        </div>
+
+        <!-- EXEMPLO 2 -->
+        <div class="card">
+            <h2>Exemplo 2: Espaçoso (Padding)</h2>
+            <div class="box-base box-2">
+                <strong>a melhor! </strong> 
+            </div>
+        </div>
+
+        <!-- EXEMPLO 3 -->
+        <div class="card">
+            <h2>Exemplo 3: Borda e Espaçamento</h2>
+            <div class="box-base box-3">
+            Uma camada extra de proteção com borda destacada garante que tudo fique bem protegido contra sobressaltos e visitas inesperadas.
+            </div>
+        </div>
+
+        <!-- EXEMPLO 4 -->
+        <div class="card">
+            <h2>Exemplo 4: Margem, Borda e Espaçamento</h2>
+            <div class="box-4-guide">
+                <div class="box-base box-4">
+                  como se fosse uma barreira invisível para a proteção
+                </div>
+            </div>
+        </div>
+
+        <!-- EXEMPLO 5 -->
+        <div class="card">
+            <h2>Exemplo 5: Borda Tracejada e Margem Larga</h2>
+            <div class="box-5-guide">
+                <div class="box-base box-5">
+                 Uma borda estilo faixas de múmia combinada com margens laterais bem amplas para dar espaço à diversão.
+                </div>
+            </div>
+        </div>
+
+        <!-- EXEMPLO 6 -->
+        <div class="card">
+            <h2>Exemplo 6: Centralização Automática</h2>
+            <div class="box-6-guide">
+                <div class="box-base box-6">
+                 Encaixe perfeito no centro do espaço com margens automáticas nas laterais e ajuste interno personalizado.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
